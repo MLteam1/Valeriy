@@ -26,7 +26,7 @@ rmsep<-sqrt(sum((res^2))/length(test[,1]))
 print(rmsep)}
 res<-sqrt(res^2) #основываясь на первой модели -убираем выброс
 x<-res==max(res) 
-test<-test[!x,]
+test<-test[-x,]
 write.csv(test,"test_clean.csv",row.names = FALSE)
 while(rmsep>1) { #запускаем вторую модель с автоподбором параметров
 s<- sample(10:15, 1)
